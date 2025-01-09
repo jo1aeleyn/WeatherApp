@@ -60,8 +60,8 @@
 
 <body>
   <ul class="navbar">
-    <li style="float: left; margin-left: -10px;" class="forecast"><a class="repo-link"
-        href="#">Jo1a</a></li>
+    <li style="float: left; margin-left: -10px;" class="forecast"><a class="title
+        href="#">Weather Forecast</a></li>
    
     <li><input spellcheck="false" class="search-city" id="searchCity" type="text" autocomplete="off"
         placeholder="🔍︎ Search City"></li>
@@ -81,70 +81,68 @@
 
   <h2 class="weather-type" id="weatherType"></h2>
 
-  <div class="additionals-first-row">
-    <span class="air-quality-additional">
-      <span class="air-quality-additional-label">Air Quality Index </span>
-      <span class="air-quality-index-additional-value">Moderate</span>
-    </span>
-
-    <span class="real-feel-additional">
-      <span class="real-feel-additional-label">Real Feel </span>
-      <span class="real-feel-additional-value" id="realFeelAdditionalValue">-</span>
-    </span>
-
-    <span class="humidity-additional">
-      <span class="humidity-additional-label">Humidity </span>
-      <span class="humidity-additional-value" id="humidityAdditionalValue">-</span>
-    </span>
-
-    <span class="max-temperature-additional">
-      <span class="max-temperature-additional-label">Highest Temperature </span>
-      <span class="max-temperature-additional-value" id="maxTemperatureAdditionalValue">-</span>
-    </span>
-
-    <span class="min-temperature-additional">
-      <span class="min-temperature-additional-label">Lowest Temperature </span>
-      <span class="min-temperature-additional-value" id="minTemperatureAdditionalValue">-</span>
-    </span>
+  <div class="additionals-table">
+    <div class="table-row">
+      <div class="table-cell">
+        <span class="real-feel-additional">
+          <span class="real-feel-additional-label">Real Feel: </span>
+          <span class="real-feel-additional-value" id="realFeelAdditionalValue">-</span>
+        </span>
+      </div>
+      <div class="table-cell">
+        <span class="humidity-additional">
+          <span class="humidity-additional-label">Humidity: </span>
+          <span class="humidity-additional-value" id="humidityAdditionalValue">-</span>
+        </span>
+      </div>
+      <div class="table-cell">
+        <span class="max-temperature-additional">
+          <span class="max-temperature-additional-label">Highest Temperature: </span>
+          <span class="max-temperature-additional-value" id="maxTemperatureAdditionalValue">-</span>
+        </span>
+      </div>
+      <div class="table-cell">
+        <span class="min-temperature-additional">
+          <span class="min-temperature-additional-label">Lowest Temperature: </span>
+          <span class="min-temperature-additional-value" id="minTemperatureAdditionalValue">-</span>
+        </span>
+      </div>
+    </div>
+  
+    <div class="table-row">
+      <div class="table-cell">
+        <span class="wind-speed-additional">
+          <span class="wind-speed-additional-label">Wind Speed: </span>
+          <span class="wind-speed-additional-value" id="windSpeedAdditionalValue">-</span>
+        </span>
+      </div>
+      <div class="table-cell">
+        <span class="wind-direction-additional">
+          <span class="wind-direction-additional-label">Wind Direction: </span>
+          <span class="wind-direction-additional-value" id="windDirectionAdditionalValue">-</span>
+        </span>
+      </div>
+      <div class="table-cell">
+        <span class="visibility-additional">
+          <span class="visibility-additional-label">Visibility: </span>
+          <span class="visibility-additional-value" id="visibilityAdditionalValue">-</span>
+        </span>
+      </div>
+      <div class="table-cell">
+        <span class="pressure-additional">
+          <span class="pressure-additional-label">Pressure: </span>
+          <span class="pressure-additional-value" id="pressureAdditionalValue">-</span>
+        </span>
+      </div>
+    </div>
   </div>
-
-  <div class="additionals-second-row">
-    <span class="wind-speed-additional">
-      <span class="wind-speed-additional-label">Wind Speed </span>
-      <span class="wind-speed-additional-value" id="windSpeedAdditionalValue">-</span>
-    </span>
-
-    <span class="wind-direction-additional">
-      <span class="wind-direction-additional-label">Wind Direction </span>
-      <span class="wind-direction-additional-value" id="windDirectionAdditionalValue">-</span>
-    </span>
-
-    <span class="visibility-additional">
-      <span class="visibility-additional-label">Visibility </span>
-      <span class="visibility-additional-value" id="visibilityAdditionalValue">-</span>
-    </span>
-
-    <span class="pressure-additional">
-      <span class="pressure-additional-label">Pressure </span>
-      <span class="pressure-additional-value" id="pressureAdditionalValue">-</span>
-    </span>
-
-    <span class="sunrise-additional">
-      <span class="sunrise-additional-label">Sunrise </span>
-      <span class="sunrise-additional-value" id="sunriseAdditionalValue">-</span>
-    </span>
-
-    <span class="sunset-additional">
-      <span class="sunset-additional-label">Sunset </span>
-      <span class="sunset-additional-value" id="sunsetAdditionalValue">-</span>
-    </span>
-  </div>
+  
 
   <br>
 
   <div class="daily-forecast">
 
-    <h2 class="daily-forecast-label">Daily</h2>
+    <h2 class="daily-forecast-label">5 days Forecast</h2>
 
     <div id="forecast-container" class="forecast-container">
     
