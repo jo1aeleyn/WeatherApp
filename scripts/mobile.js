@@ -36,7 +36,7 @@ cityInputMobile.addEventListener("keyup", function (event) {
 
     var cityInputValue = cityInputMobile.value;
 
-    var apiKey = "b1fd6e14799699504191b6bdbcadfc35"; // Default
+    var apiKey = "76178f2071c0b82b1bfb2c6135e3a4c0"; // Default
     var unit = "metric";
     var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}&units=${unit}`;
 
