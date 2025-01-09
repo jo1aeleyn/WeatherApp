@@ -56,14 +56,11 @@ cityInput.addEventListener("keyup", function (event) {
       parentElement2.appendChild(img2);
       parentElement3.appendChild(img3);
 
-      // document.getElementById("loader1").src = "icons/loader.gif";
-      // document.getElementById("loader2").src = "icons/loader.gif";
-      // document.getElementById("loader3").src = "icons/loader.gif";
     }
 
     var cityInputValue = cityInput.value;
 
-    var apiKey = "76178f2071c0b82b1bfb2c6135e3a4c0"; // Default
+    var apiKey = "76178f2071c0b82b1bfb2c6135e3a4c0"; 
     var unit = "metric";
     var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInputValue}&appid=${apiKey}&units=${unit}`;
 
