@@ -31,12 +31,31 @@ body {
 }
 
 .navbar {
-  /* background: #212a51; */
-  background: rgba(0, 0, 0, 0.375);
-  text-align: right;
-  opacity: 100%;
-  transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.navbar input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+.navbar .title {
+  font-size: 20px;
+  font-weight:lighter;
+  text-decoration: none;
+  color: #fff; /* White text */
+  text-shadow: 1px 1px 2px #000; /* Black shadow */
+}
+
 
 /* START OF MOBILE STYLES */
 
@@ -165,8 +184,7 @@ ul {
 .min-temperature-additional {
   margin-left: 5px;
   margin-right: 5px;
-  background: #fff;
-  border-radius: 50px;
+ 
   padding: 2.5px 10px;
 }
 
@@ -178,8 +196,6 @@ ul {
 .sunset-additional {
   margin-left: 5px;
   margin-right: 5px;
-  background: #fff;
-  border-radius: 50px;
   padding: 2.5px 10px;
 }
 
@@ -326,4 +342,38 @@ ul {
 .min-daily-forecast {
   font-size: 15px;
   opacity: 0.7;
+}
+
+.additionals-table {
+  display: table;
+  width: auto;
+  margin: auto;
+  border-collapse: collapse;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 5px;
+  text-align: left;
+  vertical-align: middle;
+  background-color: rgba(50, 50, 50, 0.3); /* 80% opaque */
+
+}
+
+
+.real-feel-additional,
+.humidity-additional,
+.max-temperature-additional,
+.min-temperature-additional,
+.wind-speed-additional,
+.wind-direction-additional,
+.visibility-additional,
+.pressure-additional {
+  font-size: 14px;
+  color: #ffffff;
+  
 }
