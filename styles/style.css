@@ -12,11 +12,23 @@
   display: none;
 }
 
+@media (max-width: 600px) {
+  body {
+    height: 100%;
+  }
+}
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-}
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed;
+  height: 100vh;
+}   
 
 #loader1,
 #loader2,
