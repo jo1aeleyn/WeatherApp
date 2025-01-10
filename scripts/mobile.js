@@ -95,7 +95,7 @@ cityInputMobile.addEventListener("keyup", function (event) {
 
                 forecastCard.innerHTML = `
         <p class="daily-forecast-date">${day.date}</p>
-        <div class="daily-forecast-logo"><img class="imgs-as-icons" src="${day.icon}"></div>
+        <div class="daily-forecast-logo"><img class="imgs-as-icons-days" src="${day.icon}"></div>
         <div class="max-min-temperature-daily-forecast">
           <span class="max-daily-forecast">${Math.round(day.maxTemp - 273.15)}<sup>o</sup>C</span>
           <span class="min-daily-forecast">${Math.round(day.minTemp - 273.15)}<sup>o</sup>C</span>
@@ -112,6 +112,8 @@ cityInputMobile.addEventListener("keyup", function (event) {
 
           document.getElementById("locationName").innerHTML = location;
           document.getElementById("temperatureValue").innerHTML = temperature + "<sup>o</sup>C";
+          const weatherIcon = getWeatherIcon(weatherType);
+          document.querySelector(".temperature-icon img").src = `icons/${weatherIcon}`;
           document.getElementById("weatherType").innerHTML = weatherType;
           document.getElementById("realFeelAdditionalValue").innerHTML = realFeel + "<sup>o</sup>C";
           document.getElementById("windSpeedAdditionalValue").innerHTML = windSpeed + " km/h";
@@ -121,8 +123,6 @@ cityInputMobile.addEventListener("keyup", function (event) {
           document.getElementById("maxTemperatureAdditionalValue").innerHTML = maxTemperature + "<sup>o</sup>C";
           document.getElementById("minTemperatureAdditionalValue").innerHTML = minTemperature + "<sup>o</sup>C";
           document.getElementById("humidityAdditionalValue").innerHTML = humidity;
-          document.getElementById("sunriseAdditionalValue").innerHTML = sunrise;
-          document.getElementById("sunsetAdditionalValue").innerHTML = sunset;
         }
         else {
           document.getElementById("locationName").innerHTML = "City Not Found";
@@ -134,5 +134,23 @@ cityInputMobile.addEventListener("keyup", function (event) {
       getWeather();
     }
     else document.getElementById("locationName").innerHTML = "Enter a city name...";
+  }
+  function getWeatherIcon(weatherType) {
+    const weatherIcons = {
+      clear: "sunny.png",
+      rain: "rainy.png",
+      clouds: "cloudy.png",
+      snow: "snowy.png",
+      thunderstorm: "storm.png",
+      drizzle: "drizzle.png",
+      mist: "mist.png",
+    };
+  
+    for (let key in weatherIcons) {
+      if (weatherType.toLowerCase().includes(key)) {
+        return weatherIcons[key];
+      }
+    }
+    return "default.png"; // Fallback icon
   }
 });

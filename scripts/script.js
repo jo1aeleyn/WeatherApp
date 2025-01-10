@@ -2,25 +2,7 @@ var cityInput = document.getElementById("searchCity");
 
 var backgroundsList = [
   "day1.jpg",
-  "day2.jpg",
-  "day3.jpg",
-  "day4.jpg",
-  "day5.jpg",
-  // "night1.jpg",
-  // "night2.jpg",
-  // "night3.jpg",
-  // "night4.jpg",
-  // "night5.jpg",
-  "cloudy1.jpg",
-  "cloudy2.jpg",
-  "cloudy3.jpg",
-  "cloudy4.jpg",
-  "cloudy5.jpg",
-  // "rainy1.jpg",
-  // "rainy2.jpg",
-  // "rainy3.jpg",
-  // "rainy4.jpg",
-  // "rainy5.jpg",
+
 ];
 
 var randomBackground = backgroundsList[Math.floor(Math.random() * backgroundsList.length)];
@@ -84,6 +66,8 @@ cityInput.addEventListener("keyup", function (event) {
           var sunrise = data.sys.sunrise;
           var sunset = data.sys.sunset;
 
+          
+
           fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityInputValue}&appid=${apiKey}`)
             .then(response => response.json())
             .then(data => {
@@ -119,7 +103,7 @@ cityInput.addEventListener("keyup", function (event) {
 
                 forecastCard.innerHTML = `
         <p class="daily-forecast-date">${day.date}</p>
-        <div class="daily-forecast-logo"><img class="imgs-as-icons" src="${day.icon}"></div>
+        <div class="daily-forecast-logo"><img class="imgs-as-icons-days" src="${day.icon}"></div>
         <div class="max-min-temperature-daily-forecast">
           <span class="max-daily-forecast">${Math.round(day.maxTemp - 273.15)}<sup>o</sup>C</span>
           <span class="min-daily-forecast">${Math.round(day.minTemp - 273.15)}<sup>o</sup>C</span>
@@ -138,7 +122,10 @@ cityInput.addEventListener("keyup", function (event) {
 
           document.getElementById("locationName").innerHTML = location;
           document.getElementById("temperatureValue").innerHTML = temperature + "<sup>o</sup>C";
-          document.getElementById("weatherType").innerHTML = weatherType;
+          const weatherIcon = getWeatherIcon(weatherType);
+document.querySelector(".temperature-icon img").src = `icons/${weatherIcon}`;
+document.getElementById("weatherType").innerHTML = weatherType;
+
           document.getElementById("realFeelAdditionalValue").innerHTML = realFeel + "<sup>o</sup>C";
           document.getElementById("windSpeedAdditionalValue").innerHTML = windSpeed + " km/h";
           document.getElementById("windDirectionAdditionalValue").innerHTML = windDirection;
@@ -161,4 +148,23 @@ cityInput.addEventListener("keyup", function (event) {
     }
     else document.getElementById("locationName").innerHTML = "Enter a city name...";
   }
+  function getWeatherIcon(weatherType) {
+    const weatherIcons = {
+      clear: "sunny.png",
+      rain: "rainy.png",
+      clouds: "cloudy.png",
+      snow: "snowy.png",
+      thunderstorm: "storm.png",
+      drizzle: "drizzle.png",
+      mist: "mist.png",
+    };
+  
+    for (let key in weatherIcons) {
+      if (weatherType.toLowerCase().includes(key)) {
+        return weatherIcons[key];
+      }
+    }
+    return "default.png"; // Fallback icon
+  }
 });
+
