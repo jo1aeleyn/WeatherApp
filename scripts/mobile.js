@@ -28,10 +28,6 @@ cityInputMobile.addEventListener("keyup", function (event) {
       parentElement1.appendChild(img1);
       parentElement2.appendChild(img2);
       parentElement3.appendChild(img3);
-
-      // document.getElementById("loader1").src = "icons/loader.gif";
-      // document.getElementById("loader2").src = "icons/loader.gif";
-      // document.getElementById("loader3").src = "icons/loader.gif";
     }
 
     var cityInputValue = cityInputMobile.value;
@@ -57,8 +53,6 @@ cityInputMobile.addEventListener("keyup", function (event) {
           var maxTemperature = data.main.temp_max;
           var minTemperature = data.main.temp_min;
           var humidity = data.main.humidity;
-          var sunrise = data.sys.sunrise;
-          var sunset = data.sys.sunset;
 
           fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityInputValue}&appid=${apiKey}`)
             .then(response => response.json())

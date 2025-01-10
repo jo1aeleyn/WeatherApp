@@ -2,7 +2,6 @@ var cityInput = document.getElementById("searchCity");
 
 var backgroundsList = [
   "day1.jpg",
-
 ];
 
 var randomBackground = backgroundsList[Math.floor(Math.random() * backgroundsList.length)];
